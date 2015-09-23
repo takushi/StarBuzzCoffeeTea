@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C35876F1BB253A800888ED4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C35876E1BB253A800888ED4 /* main.swift */; };
+		1C35877A1BB257A200888ED4 /* CaffeineBeverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3587791BB257A200888ED4 /* CaffeineBeverage.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1C35876B1BB253A800888ED4 /* StarBuzzCoffeeTea */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StarBuzzCoffeeTea; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C35876E1BB253A800888ED4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1C3587791BB257A200888ED4 /* CaffeineBeverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaffeineBeverage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				1C35876E1BB253A800888ED4 /* main.swift */,
+				1C3587791BB257A200888ED4 /* CaffeineBeverage.swift */,
 			);
 			path = StarBuzzCoffeeTea;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C35876F1BB253A800888ED4 /* main.swift in Sources */,
+				1C35877A1BB257A200888ED4 /* CaffeineBeverage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
