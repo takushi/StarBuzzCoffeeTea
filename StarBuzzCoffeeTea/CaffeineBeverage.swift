@@ -9,7 +9,7 @@
 import Foundation
 
 /// 飲み物
-class CaffeinBeverage {
+class CaffeinBeverageWithHook {
   /**
   イニシャライザ
   
@@ -17,7 +17,7 @@ class CaffeinBeverage {
   */
   private init() {
     
-    if (self.dynamicType === CaffeinBeverage.self) {
+    if (self.dynamicType === CaffeinBeverageWithHook.self) {
       fatalError("Abstract Class")
     }
   }
@@ -29,7 +29,9 @@ class CaffeinBeverage {
     self.boilWater()
     self.brew()
     self.pourInCup()
-    self.addCondiments()
+    if self.customerWantsCondiments() {
+      self.addCondiments()
+    }
   }
   
   /**
@@ -59,10 +61,17 @@ class CaffeinBeverage {
   func pourInCup(){
     print("カップに注ぎます")
   }
+  
+  /**
+  お客にトッピングが必要か尋ねます
+  */
+  private func customerWantsCondiments() -> Bool {
+    return true
+  }
 }
 
 /// コーヒー
-class Coffee : CaffeinBeverage {
+class Coffee : CaffeinBeverageWithHook {
   /**
   イニシャライザ
   
@@ -84,10 +93,39 @@ class Coffee : CaffeinBeverage {
   private override func addCondiments() {
     print("砂糖とミルクを追加します")
   }
+
+  /**
+  お客にトッピングが必要か尋ねます
+  */
+  private override func customerWantsCondiments() -> Bool {
+    let answer: String = self.getUserInput()
+    
+    if answer.lowercaseString[answer.startIndex] == "y" {
+      return true
+    } else {
+      return false
+    }
+  }
+  
+  /**
+  お客にトッピングが必要か尋ねます
+  */
+  private func getUserInput() -> String {
+    print("コーヒーに砂糖とミルクを入れますか？ (y/n)")
+    
+    let input: NSFileHandle = NSFileHandle.fileHandleWithStandardInput()
+    let answer: NSString? = NSString(data: input.availableData, encoding: NSUTF8StringEncoding)
+    
+    if let a: NSString = answer {
+      return a as String
+    } else {
+      return "no"
+    }
+  }
 }
 
 /// 紅茶
-class Tea : CaffeinBeverage {
+class Tea : CaffeinBeverageWithHook {
   /**
   イニシャライザ
   
